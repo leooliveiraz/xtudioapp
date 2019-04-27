@@ -1,0 +1,21 @@
+<mz-navbar>
+  <a href="#" class="brand-logo center">Xtudio</a>
+  <mz-navbar-item-container [align]="'left'">
+    <mz-navbar-item>
+      <a id="btn-sidenav-demo" class="waves-effect center">
+        <i mz-icon [align]="'right'" [icon]="'menu'" [size]="'medium'">
+        </i>
+      </a>
+    </mz-navbar-item>
+  </mz-navbar-item-container>
+</mz-navbar>
+
+<mz-sidenav #sidenav
+  [id]="'sidenav-demo'"
+  [collapseButtonId]="'btn-sidenav-demo'">
+  <mz-navbar></mz-navbar>
+  
+  <mz-sidenav-link>
+    <a href="#"  class="waves-effect" (click)="sidenav.opened = false">First Link</a>
+  </mz-sidenav-link>
+</mz-sidenav>
