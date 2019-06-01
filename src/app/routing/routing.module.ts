@@ -9,6 +9,7 @@ import { ServicoComponent } from '../views/servico/servico.component';
 import { PainelComponent } from '../views/painel/painel.component';
 import { ServicoFormComponent } from '../views/servico-form/servico-form.component';
 import { FormaPagamentoFormComponent } from '../views/forma-pagamento-form/forma-pagamento-form.component';
+import { FuncionarioFormComponent } from '../views/funcionario-form/funcionario-form.component';
 
 const appRoutes: Routes = [
   { path: 'agendamento', component: AgendamentoComponent },
@@ -16,6 +17,8 @@ const appRoutes: Routes = [
   { path: 'formapagamento/form',      component: FormaPagamentoFormComponent },
   { path: 'formapagamento/form/:id',      component: FormaPagamentoFormComponent },
   { path: 'funcionario',      component: FuncionarioComponent },
+  { path: 'funcionario/form',      component: FuncionarioFormComponent },
+  { path: 'funcionario/form/:id',      component: FuncionarioFormComponent },
   { path: 'servico',      component: ServicoComponent },
   { path: 'servico/form',      component: ServicoFormComponent },
   { path: 'servico/form/:id',      component: ServicoFormComponent },
