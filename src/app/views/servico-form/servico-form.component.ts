@@ -10,7 +10,7 @@ import {  Router, ActivatedRoute } from '@angular/router';
   templateUrl: './servico-form.component.html',
   styleUrls: ['./servico-form.component.css']
 })
-export class ServicoFormComponent implements OnInit, OnDestroy {
+export class ServicoFormComponent implements OnInit {
 
   public form: FormGroup;
   private subscribe;
@@ -24,9 +24,6 @@ export class ServicoFormComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   }
-  ngOnDestroy(): void {
-    this.subscribe.unsubscribe();
-  }
 
   createForm() {
     const id = this.activatedRoute.snapshot.paramMap.get("id");
@@ -37,7 +34,7 @@ export class ServicoFormComponent implements OnInit, OnDestroy {
         excluido: [false]
       });
     } else {
-      this.subscribe = this.service.getServico(id).subscribe( res => {
+      this.service.getServico(id).subscribe( res => {
         const obj:any = res;
         this.form = this.formBuilder.group({
           id: [obj.id],
@@ -57,14 +54,14 @@ export class ServicoFormComponent implements OnInit, OnDestroy {
     if(this.form.value.id){
       this.service.alterar(this.form.value).subscribe( 
         res => {
-          this.toastService.show('Serviço salvo', 1000);
+          this.toastService.show('Serviço salvo', 300 );
           this.router.navigate(['/servico']);
         }
       );
     } else {
       this.service.inserir(this.form.value).subscribe( 
         res => {
-          this.toastService.show('Serviço salvo', 1000);
+          this.toastService.show('Serviço salvo', 300);
           this.router.navigate(['/servico']);
         }
       );

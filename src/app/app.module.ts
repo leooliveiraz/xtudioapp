@@ -24,6 +24,7 @@ import { FuncionarioComponent } from './views/funcionario/funcionario.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { PainelComponent } from './views/painel/painel.component';
 import { ServicoFormComponent } from './views/servico-form/servico-form.component';
+import { FormaPagamentoFormComponent } from './views/forma-pagamento-form/forma-pagamento-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ServicoFormComponent } from './views/servico-form/servico-form.componen
     FormaPagamentoComponent,
     FuncionarioComponent,
     PainelComponent,
-    ServicoFormComponent
+    ServicoFormComponent,
+    FormaPagamentoFormComponent
   ],
   imports: [
     BrowserModule,

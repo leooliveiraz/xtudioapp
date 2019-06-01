@@ -1,3 +1,12 @@
-<p>
-  forma-pagamento works!
-</p>
+<h3>Forma de Pagamento</h3>
+<mz-collection>
+  <mz-collection-item *ngFor="let item of lista" >{{item.nome }} 
+    <a [routerLink]="'/formapagamento/form/'+item.id"  mz-secondary-content><i mz-icon [icon]="'edit'"></i></a>
+  </mz-collection-item>
+</mz-collection>
+<div class="fixed-action-btn">
+  <button mz-button [float]="true" [large]="true" routerLink="/formapagamento/form" >
+    <i mz-icon [align]="'right'" [icon]="'add'" [size]="'medium'">
+    </i>
+  </button>
+</div>

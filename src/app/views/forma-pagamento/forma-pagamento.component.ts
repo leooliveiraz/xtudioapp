@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormaPagamentoService } from 'src/app/service/forma-pagamento.service';
 
 @Component({
   selector: 'app-forma-pagamento',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormaPagamentoComponent implements OnInit {
 
-  constructor() { }
+  lista = [];
+  constructor(private service: FormaPagamentoService) { }
 
   ngOnInit() {
+    this.service.getAll().subscribe(result => {
+      this.lista = result;
+    });
   }
 
 }

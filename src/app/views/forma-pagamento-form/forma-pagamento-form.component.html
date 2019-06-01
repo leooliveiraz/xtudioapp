@@ -1,0 +1,31 @@
+<h3>Forma de Pagamento</h3>
+<br />
+<form [formGroup]="form" (submit)="salvar()">
+  <mz-input-container>
+    <i mz-icon-mdi mz-input-prefix
+      [icon]="'briefcase'">
+    </i>
+    <input mz-input [label]="'Forma de Pagamento'" [validate]="true"  required [dataError]="'Nome inválido'" 
+      [dataSuccess]="'Ok'" id="nome"
+      formControlName="nome"
+      length="150" type="text" />
+  </mz-input-container>
+  
+  <mz-input-container>
+      <input mz-input  id="id"  type="hidden" 
+      formControlName="id" />
+  </mz-input-container>
+  
+  <mz-input-container>
+      <input mz-input  id="excluido"  type="hidden"
+      formControlName="excluido" />
+  </mz-input-container>
+  
+
+  <br />
+  <br />
+  <button type="submit" mz-button class='right' [large]='true'>
+    <i mz-icon [align]="'right'" [icon]="'save'" [size]="'medium'"></i>
+    Salvar
+  </button>
+</form>
