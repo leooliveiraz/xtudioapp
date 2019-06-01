@@ -16,6 +16,26 @@
   <mz-navbar></mz-navbar>
   
   <mz-sidenav-link>
-    <a href="#"  class="waves-effect" (click)="sidenav.opened = false">First Link</a>
+    <a routerLink="/agendamento" 
+        routerLinkActive="active"  
+        class="waves-effect" (click)="sidenav.opened = false">Agendamento</a>
+  </mz-sidenav-link>
+  
+  <mz-sidenav-link>
+    <a routerLink="/formapagamento" 
+        routerLinkActive="active"  
+        class="waves-effect" (click)="sidenav.opened = false">Forma de Pagamento</a>
+  </mz-sidenav-link>
+  
+  <mz-sidenav-link>
+    <a routerLink="/funcionario" 
+        routerLinkActive="active"  
+        class="waves-effect" (click)="sidenav.opened = false">Funcionarios</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-link>
+    <a routerLink="/servico" 
+        routerLinkActive="active"  
+        class="waves-effect" (click)="sidenav.opened = false">Serviço</a>
   </mz-sidenav-link>
 </mz-sidenav>
