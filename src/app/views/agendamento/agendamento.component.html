@@ -1,3 +1,22 @@
-<p>
-  agendamento works!
-</p>
+<h3>Agendamentos</h3>
+<mz-progress *ngIf="loading"></mz-progress>
+<mz-collection>
+  <mz-collection-item *ngFor="let item of lista" >
+      <strong>Data:</strong> 
+      {{ item.data |  date: 'dd/MM/yyyy'}} 
+      <strong>Horário:</strong> 
+      {{ item.data+' '+item.horaInicial | date: 'HH:mm'}} 
+      até 
+      {{ item.data+' '+item.horaFinal | date: 'HH:mm'}}
+      <strong>Cliente:</strong> 
+              {{item.cliente }}  
+     
+    <a [routerLink]="'/agendamento/form/'+item.id"  mz-secondary-content><i mz-icon [icon]="'edit'"></i></a>
+  </mz-collection-item>
+</mz-collection>
+<div class="fixed-action-btn">
+  <button mz-button [float]="true" [large]="true" routerLink="/agendamento/form" >
+    <i mz-icon [align]="'right'" [icon]="'add'" [size]="'medium'">
+    </i>
+  </button>
+</div>

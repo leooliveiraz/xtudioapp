@@ -12,7 +12,12 @@ import {
     MzButtonModule,
     MzInputModule,
     MzCollectionModule,
-    MzToastModule } from 'ngx-materialize';
+    MzToastModule,
+    MzDatepickerModule,
+    MzTimepickerModule,
+    MzProgressModule,
+    MzCardModule ,
+    MzSelectModule  } from 'ngx-materialize';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
@@ -26,6 +31,7 @@ import { PainelComponent } from './views/painel/painel.component';
 import { ServicoFormComponent } from './views/servico-form/servico-form.component';
 import { FormaPagamentoFormComponent } from './views/forma-pagamento-form/forma-pagamento-form.component';
 import { FuncionarioFormComponent } from './views/funcionario-form/funcionario-form.component';
+import { AgendamentoFormComponent } from './views/agendamento-form/agendamento-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,8 @@ import { FuncionarioFormComponent } from './views/funcionario-form/funcionario-f
     PainelComponent,
     ServicoFormComponent,
     FormaPagamentoFormComponent,
-    FuncionarioFormComponent
+    FuncionarioFormComponent,
+    AgendamentoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +61,12 @@ import { FuncionarioFormComponent } from './views/funcionario-form/funcionario-f
     MzButtonModule,
     MzInputModule,
     MzCollectionModule,
-    MzToastModule
+    MzToastModule,
+    MzDatepickerModule,
+    MzCardModule,
+    MzTimepickerModule,
+    MzProgressModule,
+    MzSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

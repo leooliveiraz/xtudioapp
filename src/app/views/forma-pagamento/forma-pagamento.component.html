@@ -1,4 +1,5 @@
 <h3>Forma de Pagamento</h3>
+<mz-progress *ngIf="loading"></mz-progress>
 <mz-collection>
   <mz-collection-item *ngFor="let item of lista" >{{item.nome }} 
     <a [routerLink]="'/formapagamento/form/'+item.id"  mz-secondary-content><i mz-icon [icon]="'edit'"></i></a>

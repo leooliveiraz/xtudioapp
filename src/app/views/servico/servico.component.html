@@ -1,4 +1,5 @@
 <h3>Serviços</h3>
+<mz-progress *ngIf="loading"></mz-progress>
 <mz-collection>
   <mz-collection-item *ngFor="let item of servicos" >{{item.nome }} 
     <a [routerLink]="'/servico/form/'+item.id"  mz-secondary-content><i mz-icon [icon]="'edit'"></i></a>

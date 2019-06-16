@@ -7,13 +7,15 @@ import { FormaPagamentoService } from 'src/app/service/forma-pagamento.service';
   styleUrls: ['./forma-pagamento.component.css']
 })
 export class FormaPagamentoComponent implements OnInit {
-
+  loading = false;
   lista = [];
   constructor(private service: FormaPagamentoService) { }
 
   ngOnInit() {
+    this.loading = true;
     this.service.getAll().subscribe(result => {
       this.lista = result;
+      this.loading = false;
     });
   }
 

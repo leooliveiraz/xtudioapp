@@ -7,12 +7,15 @@ import { FuncionarioService } from 'src/app/service/funcionario.service.';
   styleUrls: ['./funcionario.component.css']
 })
 export class FuncionarioComponent implements OnInit {
+  loading = false;
   lista = [];
   constructor(private service: FuncionarioService) { }
 
   ngOnInit() {
+    this.loading = true;
     this.service.getAll().subscribe(result => {
       this.lista = result;
+      this.loading = false;
     });
   }
 

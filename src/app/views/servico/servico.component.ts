@@ -7,13 +7,15 @@ import { ServicoService } from 'src/app/service/servico.service';
   styleUrls: ['./servico.component.css']
 })
 export class ServicoComponent implements OnInit {
-
+  loading = false;
   servicos = [];
   constructor(private service : ServicoService) { }
-
+  
   ngOnInit() {
-    this.service.getServicos().subscribe(result => {
+    this.loading = true;
+    this.service.getAll().subscribe(result => {
       this.servicos = result;
+      this.loading = false;
     });
   }
 

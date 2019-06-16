@@ -1,3 +1,4 @@
+import { AgendamentoFormComponent } from './../views/agendamento-form/agendamento-form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,6 +14,8 @@ import { FuncionarioFormComponent } from '../views/funcionario-form/funcionario-
 
 const appRoutes: Routes = [
   { path: 'agendamento', component: AgendamentoComponent },
+  { path: 'agendamento/form',      component: AgendamentoFormComponent },
+  { path: 'agendamento/form/:id',      component: AgendamentoFormComponent },
   { path: 'formapagamento',      component: FormaPagamentoComponent },
   { path: 'formapagamento/form',      component: FormaPagamentoFormComponent },
   { path: 'formapagamento/form/:id',      component: FormaPagamentoFormComponent },

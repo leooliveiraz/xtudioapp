@@ -34,7 +34,7 @@ export class ServicoFormComponent implements OnInit {
         excluido: [false]
       });
     } else {
-      this.service.getServico(id).subscribe( res => {
+      this.service.get(id).subscribe( res => {
         const obj:any = res;
         this.form = this.formBuilder.group({
           id: [obj.id],

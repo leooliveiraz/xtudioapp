@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServicoService {
+export class AgendamentoService {
   constructor(private http: HttpClient) {  }
-  url = `${environment.url}servico`;
+  url = `${environment.url}agendamento`;
 
   getAll(): Observable<any> {
     console.log(this.url);
@@ -18,21 +18,21 @@ export class ServicoService {
     return this.http.get(`${this.url}/${id}`, {responseType: 'json'});
   }
 
-  alterar(servico) {
-    console.log(JSON.stringify(servico));
+  alterar(obj) {
+    console.log(JSON.stringify(obj));
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put( this.url, JSON.stringify(servico), {headers: headers});
+    return this.http.put( this.url, JSON.stringify(obj), {headers: headers});
   }
 
-  inserir(servico) {
+  inserir(obj) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post( this.url, servico, {headers: headers});
+    return this.http.post( this.url, obj, {headers: headers});
   }
 
-  excluir(servico) {
-    servico.excluido = true;
+  excluir(obj) {
+    obj.excluido = true;
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(this.url, servico,  {headers: headers}).toPromise();
+    return this.http.put(this.url, obj,  {headers: headers}).toPromise();
   }
 
 }

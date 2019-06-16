@@ -1,3 +1,4 @@
+import { AgendamentoService } from './../../service/agendamento.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./painel.component.css']
 })
 export class PainelComponent implements OnInit {
+  agendamentos = [];
 
-  constructor() { }
+  constructor(private agendamentoService :AgendamentoService) { }
 
   ngOnInit() {
   }

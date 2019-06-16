@@ -1,0 +1,165 @@
+<h3>Agendamento</h3>
+<br />
+<div *ngIf="construido">
+
+  <form [formGroup]="form" (submit)="salvar()" >
+    <mz-input-container>
+      <i mz-icon-mdi mz-input-prefix
+      [icon]="'face'">
+    </i>
+    <input mz-input [label]="'Nome do Cliente'" [validate]="true"  
+      [dataError]="'Nome do Cliente Inválido '" 
+      [dataSuccess]="'Ok'" id="cliente"
+      formControlName="cliente"
+      length="150" type="text" />
+  </mz-input-container>
+      
+  <mz-datepicker-container class="col s12">
+    <i mz-icon-mdi mz-input-prefix
+    [icon]="'calendar'">
+  </i>
+  <input mz-datepicker
+  [label]="'Data do Agendamento'"
+  [options]="options"
+  formControlName="data"
+  id="data"
+  type="text">
+</mz-datepicker-container>
+
+<mz-timepicker-container class="col s12">
+  <i mz-icon-mdi mz-input-prefix
+  [icon]="'clock-outline'">
+</i>
+    <input mz-timepicker
+      [label]="'Hora do Agendamento'"
+      [options]="timepickerOptions"
+      id="horaInicial"
+      formControlName="horaInicial"
+      type="text">
+  </mz-timepicker-container>
+  
+  <mz-timepicker-container class="col s12">
+    <i mz-icon-mdi mz-input-prefix
+    [icon]="'clock-alert-outline'">
+  </i>
+  <input mz-timepicker
+  [label]="'Hora do Fim Agendamento'"
+  [options]="timepickerOptions"
+  id="horaFinal"
+      formControlName="horaFinal"
+      type="text">
+    </mz-timepicker-container>
+    
+  <mz-select-container >
+    <i mz-icon mz-input-prefix
+    [icon]="'person_outline'">
+  </i>  
+    <select mz-select
+    id="formapagamento"
+    [label]="'Funcionário:'"
+      [placeholder]="'Funcionário:'"
+      formControlName="funcionario" >
+        <option *ngFor="let item of funcionarios" [value]="item.id">{{ item.nome }}</option>
+    </select>
+  </mz-select-container>
+  
+  <mz-select-container >
+    <i mz-icon mz-input-prefix
+    [icon]="'work_outline'">
+    </i>  
+    <select mz-select
+      id="servicos"
+      multiple
+      [label]="'Serviços:'"
+      [placeholder]="'Serviços:'"
+      formControlName="servicos" >
+      
+      <option *ngFor="let item of servicos" [value]="item.id" >{{ item.nome }}</option>
+    </select>
+  </mz-select-container>
+
+  <mz-input-container>
+    <i mz-icon-mdi mz-input-prefix
+    [icon]="'cash'">
+  </i>  
+  <input mz-input [label]="'Valor'" [validate]="true"  required 
+  [dataError]="'Valor Inválido '"
+  [dataSuccess]="'Ok'" id="valor"
+  formControlName="valor"
+        length="150" type="text" />
+      </mz-input-container>
+      
+      <mz-select-container >
+        <i mz-icon mz-input-prefix
+        [icon]="'payment'">
+      </i>  
+      <select mz-select
+      id="formapagamento"
+      [label]="'Forma de Pagamento:'"
+      [placeholder]="'Forma de Pagamento:'"
+      formControlName="formaPagamento" >
+      <option *ngFor="let item of formasPagamento" [value]="item.id">{{ item.nome }}</option>
+    </select>
+  </mz-select-container>
+
+  <mz-select-container>
+    <i mz-icon mz-input-prefix
+    [icon]="'attach_money'">
+  </i>  
+  <select mz-select
+  id="pago"
+  [label]="'Pago:'"
+  [placeholder]="'Pago:'"
+  formControlName="pago" >
+  <option value="true">Sim</option>
+  <option value="false" selected>Não</option>
+  </select>
+  </mz-select-container>
+
+  <mz-select-container>
+    <i mz-icon mz-input-prefix
+    [icon]="'event_note'">
+        </i>  
+        <select mz-select
+        id="anamnese"
+        [label]="'Preencheu Anamnese:'"
+        [placeholder]="'Preencheu Anamnese:'"
+        formControlName="anamnese" >
+        <option value="true">Sim</option>
+        <option value="false" selected>Não</option>
+      </select>
+    </mz-select-container>
+    
+    <mz-select-container>
+      <i mz-icon mz-input-prefix
+      [icon]="'loyalty'">
+      </i>  
+      <select mz-select
+        id="confirmado"
+        [label]="'Confirmado:'"
+        [placeholder]="'Confirmado:'"
+        formControlName="confirmado" >
+        <option value="true">Sim</option>
+        <option value="false" selected>Não</option>
+      </select>
+    </mz-select-container>
+    
+    <mz-input-container>
+      <input mz-input  id="id"  type="hidden" 
+      formControlName="id" />
+    </mz-input-container>
+    
+    <mz-input-container>
+      <input mz-input  id="excluido"  type="hidden"
+      formControlName="excluido" />
+    </mz-input-container>
+    
+    
+    <br />
+    <br />
+    <button type="submit" mz-button class='right' [large]='true'>
+      <i mz-icon [align]="'right'" [icon]="'save'" [size]="'medium'"></i>
+      Salvar
+    </button>
+  </form>
+</div>
